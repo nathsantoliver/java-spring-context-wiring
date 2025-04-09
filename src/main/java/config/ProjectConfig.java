@@ -7,22 +7,28 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "beans")
 public class ProjectConfig {
-/*
+
     @Bean
-    public Parrot parrot() {
+    public Parrot parrot1() {
         Parrot p = new Parrot();
         p.setName("Koko");
         return p;
     }
 
     @Bean
-    public Person person(Parrot parrot) {   // Spring injects the parrot bean into this parameter
-        Person p = new Person();
-        p.setName("Ella");
-        p.setParrot(parrot);  // setting the reference of the parrot bean to the person's parrot attribute
+    public Parrot parrot2() {
+        Parrot p = new Parrot();
+        p.setName("Miki");
         return p;
     }
-    */
+
+    @Bean
+    public Person person(Parrot parrot2) {   // the name of the parameter matches the name of the bean
+        Person p = new Person();
+        p.setName("Ella");
+        p.setParrot(parrot2);
+        return p;
+    }
+
 }
