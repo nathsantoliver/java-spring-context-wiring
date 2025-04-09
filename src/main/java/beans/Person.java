@@ -1,9 +1,17 @@
 package beans;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Person {
 
-    private String name;
-    private Parrot parrot;
+    private String name = "Ella";
+    private final Parrot parrot;
+
+    public Person(@Qualifier("parrot2") Parrot parrot) {
+        this.parrot = parrot;
+    }
 
     // getters and setters
     public String getName() {
@@ -18,8 +26,8 @@ public class Person {
         return parrot;
     }
 
-    public void setParrot(Parrot parrot) {
-        this.parrot = parrot;
-    }
+//    public void setParrot(Parrot parrot) {
+//        this.parrot = parrot;
+//    }
 
 }
