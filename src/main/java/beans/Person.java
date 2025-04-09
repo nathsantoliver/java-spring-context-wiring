@@ -8,14 +8,12 @@ public class Person {
 
     private String name = "Ella";
 
-    // we need to remove the @autowired annotation if we make the field final to ensure
-    // its value cannot be changed after initialization
-    private final Parrot parrot;
+    private Parrot parrot;
 
-    @Autowired  // the annotation need to be used over the constructor
-    public Person(Parrot parrot) {
-        this.parrot = parrot;
-    }
+//    @Autowired  // the annotation need to be used over the constructor
+//    public Person(Parrot parrot) {
+//        this.parrot = parrot;
+//    }
 
     // getters and setters
     public String getName() {
@@ -30,8 +28,9 @@ public class Person {
         return parrot;
     }
 
-//    public void setParrot(Parrot parrot) {
-//        this.parrot = parrot;
-//    }
+    @Autowired
+    public void setParrot(Parrot parrot) {
+        this.parrot = parrot;
+    }
 
 }
