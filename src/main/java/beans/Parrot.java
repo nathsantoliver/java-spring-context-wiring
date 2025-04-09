@@ -1,14 +1,13 @@
 package beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Parrot {
 
-    private String name;
+    private String name = "Koko";
 
-    // no-args constructor
-    public Parrot() {
-        System.out.println("Parrot created");
-    }
-
+    // getters and setters
     public String getName() {
         return name;
     }
@@ -21,4 +20,5 @@ public class Parrot {
     public String toString() {
         return "Parrot: " + name;
     }
+
 }

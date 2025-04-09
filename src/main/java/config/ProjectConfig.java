@@ -3,11 +3,13 @@ package config;
 import beans.Parrot;
 import beans.Person;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = "beans")
 public class ProjectConfig {
-
+/*
     @Bean
     public Parrot parrot() {
         Parrot p = new Parrot();
@@ -22,4 +24,5 @@ public class ProjectConfig {
         p.setParrot(parrot);  // setting the reference of the parrot bean to the person's parrot attribute
         return p;
     }
+    */
 }
