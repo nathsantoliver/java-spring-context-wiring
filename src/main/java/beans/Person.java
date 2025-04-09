@@ -8,8 +8,14 @@ public class Person {
 
     private String name = "Ella";
 
-    @Autowired  // with this annotation we instruct Spring to inject an appropriate value from its context
-    private Parrot parrot;
+    // we need to remove the @autowired annotation if we make the field final to ensure
+    // its value cannot be changed after initialization
+    private final Parrot parrot;
+
+    @Autowired  // the annotation need to be used over the constructor
+    public Person(Parrot parrot) {
+        this.parrot = parrot;
+    }
 
     // getters and setters
     public String getName() {
@@ -24,8 +30,8 @@ public class Person {
         return parrot;
     }
 
-    public void setParrot(Parrot parrot) {
-        this.parrot = parrot;
-    }
+//    public void setParrot(Parrot parrot) {
+//        this.parrot = parrot;
+//    }
 
 }
