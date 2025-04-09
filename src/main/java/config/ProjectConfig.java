@@ -16,10 +16,10 @@ public class ProjectConfig {
     }
 
     @Bean
-    public Person person() {
+    public Person person(Parrot parrot) {   // Spring injects the parrot bean into this parameter
         Person p = new Person();
         p.setName("Ella");
-        p.setParrot(parrot());  // setting the reference of the parrot bean to the person's parrot attribute
+        p.setParrot(parrot);  // setting the reference of the parrot bean to the person's parrot attribute
         return p;
     }
 }
