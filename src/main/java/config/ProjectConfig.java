@@ -2,8 +2,9 @@ package config;
 
 import beans.Parrot;
 import beans.Person;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+//import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -23,11 +24,12 @@ public class ProjectConfig {
         return p;
     }
 
+    // the @Qualifier annotation mark your intention to inject a specific bean
     @Bean
-    public Person person(Parrot parrot2) {   // the name of the parameter matches the name of the bean
+    public Person person(@Qualifier("parrot2") Parrot parrot) {
         Person p = new Person();
         p.setName("Ella");
-        p.setParrot(parrot2);
+        p.setParrot(parrot);
         return p;
     }
 

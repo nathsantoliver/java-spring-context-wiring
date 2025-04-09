@@ -1,19 +1,9 @@
 package beans;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class Person {
 
     private String name;
-
     private Parrot parrot;
-
-//    @Autowired  // the annotation need to be used over the constructor
-//    public Person(Parrot parrot) {
-//        this.parrot = parrot;
-//    }
 
     // getters and setters
     public String getName() {
